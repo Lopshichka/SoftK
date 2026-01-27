@@ -2,9 +2,9 @@
 
 A utility for quickly launching applications, files, and websites using global hotkeys.
 
-# Hotkey configuration (Configuration file: 'user/config/binds.cfg'`.
+## Hotkey configuration (Configuration file: 'user/config/binds.cfg').
 
-### Recording format:
+### The format of the entry:
 KEY|NAME|PATH/ID/LINK
 ### Examples:
 - F3|Animaze|1364390 # Steam app (AppID).
@@ -16,7 +16,7 @@ KEY|NAME|PATH/ID/LINK
 ### 1. Steam applications.
 Use a numeric AppID (can be found here - [steamdb.info ](https://steamdb.info/search /))
 
-###2. Local files.
+### 2. Local files.
 Supported extensions:
 - Executable files: `.exe, .bat, .cmd, .ps1, .vbs`
 - Documents: `.pdf, .doc, .docx, .xls, .xlsx, .pptx, .txt`
@@ -25,7 +25,7 @@ Supported extensions:
 - Archives: `.zip, .rar`
 - Web: `.html, .htm, .url`
 
-###3. Websites
+### 3. Websites
 Any URLs with the protocols `http://` or `https://`
 
 ## Available keys.
