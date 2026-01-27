@@ -9,7 +9,7 @@ KEY|NAME|PATH/ID/LINK
 ### Examples:
 - F3|Animaze|1364390 # Steam app (AppID).
 - F4|MyApp|C:\Apps\MyApp\app.exe # Local program.
-- F5|VK|https://github.com/ # Website.
+- F5|GITHUB|https://github.com/ # Website.
 
 ## Supported launch types.
 
