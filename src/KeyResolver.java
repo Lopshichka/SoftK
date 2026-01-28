@@ -1,4 +1,4 @@
-package src;
+
 import java.util.HashMap;
 import java.util.Map;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;

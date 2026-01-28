@@ -1,4 +1,4 @@
-package src;
+
 import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.mouse.NativeMouseListener;
 

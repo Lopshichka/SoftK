@@ -1,4 +1,4 @@
-package src;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -14,7 +14,7 @@ public class TrayIconManager {
             return;
         }
         delTrayIcon();
-        Image icon = Toolkit.getDefaultToolkit().getImage("etc/assets/SoftK.ico");
+        Image icon = Toolkit.getDefaultToolkit().getImage("etc/assets/SoftK.png");
         createMenu();
 
         trayIcon = new java.awt.TrayIcon(icon, "SoftK");

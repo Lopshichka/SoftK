@@ -1,4 +1,5 @@
-package src;
+
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,19 +22,18 @@ public class BindsLoader {
             }
 
             String[] parts = line.split("\\|");
-            if (parts.length < 3) continue;
-            
+            if (parts.length < 3)
+                continue;
+
             String hotkeyStr = parts[0].trim();
             String value = parts[2].trim();
-            
+
             int hotkeyCode = KeyResolver.resolve(hotkeyStr);
-            
+
             if (hotkeyCode == 0) {
                 Logger.log("incorrect key or combination: " + hotkeyStr);
                 continue;
             }
-
-            value = value.replace("\\", "\\\\");
 
             if (keyMap.containsKey(hotkeyCode)) {
                 Logger.log("duplicate keys/combinations: " + hotkeyStr);

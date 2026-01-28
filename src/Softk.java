@@ -1,4 +1,3 @@
-package src;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -34,15 +33,9 @@ public class Softk {
                         .replace("\n", "")
                         .replace("\r", "")
                         .replace(";", "")
-                        .replace("(", "")
-                        .replace(")", "")
-                        .replace("|", "")
                         .replace("<", "")
                         .replace(">", "")
-                        .replace("$()", "")
-                        .replace("", "")
-                        .replace("", "")
-                        .replace("", "");
+                        .replace("$()", "");
                 try {
                     String command = "";
                     if (res.matches("\\d+")) {
@@ -69,15 +62,27 @@ public class Softk {
                             }
                         }
                         if (isSupported) {
+                            Logger.log(res);
                             File file = new File(res);
                             if (!file.exists()) {
-                                Logger.log("file does not exist");
+                                Logger.log("file does not exist: " + res);
                                 return;
                             }
                             String name = file.getName();
                             String directory = file.getParent();
-                            command = "cmd /c start \"\" /D \"" + directory + "\" \"" + name + "\"";
-                            Runtime.getRuntime().exec(command);
+                            try {
+                                try {
+                                    Desktop.getDesktop().open(file);
+                                } catch (Exception e) {
+                                    ProcessBuilder pb = new ProcessBuilder();
+                                    if (directory != null) {
+                                        pb.directory(new File(directory));
+                                    }
+                                    pb.command(file.getAbsolutePath());
+                                    Process process = pb.start();
+                                }
+                            } catch (Exception e) {
+                            }
                             Logger.log("app/file launched, path: " + "\"" + res + "\"");
                         } else {
                             Logger.log("unable to run, unsupported file type");
